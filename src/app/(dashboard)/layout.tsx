@@ -17,6 +17,8 @@ export default function DashBoardLayout({
                     <Image src="/logo.png" width={32} height={32} alt="logo" quality={100} />
                     <span className="font-semibold hidden lg:block">ApnaSchool </span>
                 </Link>
+
+                {/* all menus */}
                 <Menu />
             </div>
 

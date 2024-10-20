@@ -11,12 +11,13 @@ const Navbar = () => {
                 <input type="text" placeholder='search...' className='focus:outline-none bg-slate-100 text-gray-500' />
             </div>
             {/* icons */}
-            <div className='flex items-center justify-center gap-6'>
+            <div className='flex items-center gap-8 justify-end w-full '>
                 <div className='bg-white rounded-full flex items-center cursor-pointer'>
                     <Image src="/message.png " height={25} width={25} alt='message' />
                 </div>
-                <div className='bg-white rounded-full flex items-center cursor-pointer'>
+                <div className='bg-white rounded-full flex items-center cursor-pointer relative'>
                     <Image src="/announcement.png " height={25} width={25} alt='message' />
+                    <span className='bg-purple-600 text-white text-sm p-2 w-5 h-5 flex items-center justify-center rounded-full absolute -top-2 left-6'>1</span>
                 </div>
                 <div className='flex flex-col leading-5 '>
                     <h2 className='font-medium'>Jhon Doe</h2>
