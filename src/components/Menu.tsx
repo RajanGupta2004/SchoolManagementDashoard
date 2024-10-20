@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const menuItems = [
   {
     title: "MENU",
@@ -112,3 +115,31 @@ const menuItems = [
     ],
   },
 ];
+
+
+
+const Menu = () => {
+  return (
+    <div className=" text-sm p-3">
+      {
+        menuItems.map((list, index) => (
+          <div key={index} className="flex flex-col justify-center gap-3">
+            <span className="my-1 hidden lg:block">{list.title}</span>
+            {
+              list.items.map((menu) => (
+
+                <Link key={menu.icon} href={menu.href} className="flex items-center justify-center lg:justify-start gap-2">
+                  <Image src={menu.icon} width={20} height={20} alt={menu.label} />
+                  <span className="hidden lg:block text-gray-500">{menu.label}</span>
+                </Link>
+              ))
+            }
+          </div>
+        ))
+      }
+
+    </div>
+  )
+}
+
+export default Menu
