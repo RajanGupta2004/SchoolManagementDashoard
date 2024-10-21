@@ -17,6 +17,7 @@ const CountChart = () => {
             pv: 4800,
             fill: '#ffc658',
         },
+
     ];
 
 
@@ -28,9 +29,9 @@ const CountChart = () => {
                     <h1 className='font-semibold'>Students</h1>
                     <Image src="/moreDark.png" width={20} height={20} alt='img' />
                 </div>
-                <div className='w-full h-[75%] '>
+                <div className='w-full h-[75%] relative'>
                     <ResponsiveContainer >
-                        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
+                        <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="100%" barSize={32} data={data}>
                             <RadialBar
                                 // minAngle={15}
                                 label={{ position: 'insideStart', fill: '#fff' }}
@@ -39,6 +40,7 @@ const CountChart = () => {
                             />
                         </RadialBarChart>
                     </ResponsiveContainer>
+                    <Image src="/maleFemale.png" width={50} height={50} quality={100} alt='"img' className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' />
 
                 </div>
                 <div className='flex justify-center gap-8'>
