@@ -23,7 +23,7 @@ const events = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nobis?"
     },
     {
-        id: "2",
+        id: "3",
         title: "schoole picnice party",
         date: "12:00 am",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nobis?"
@@ -43,7 +43,7 @@ const EventCalander = () => {
                 </div>
                 {
                     events.map((event) => (
-                        <div className='flex flex-col gap-4 border-y-2 border-y-purple-400-300 p-4'>
+                        <div key={event.id} className='flex flex-col gap-4 border-y-2 border-y-purple-400-300 p-4'>
                             <div className='flex justify-between '>
                                 <h2 className='text-sm font-bold'>{event.title}</h2>
                                 <h2>{event.date}</h2>

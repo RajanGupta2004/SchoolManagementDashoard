@@ -1,3 +1,4 @@
+import Announcement from '@/components/Announcement'
 import AttendenceChart from '@/components/AttendenceChart'
 import CountChart from '@/components/CountChart'
 import EventCalander from '@/components/EventCalander'
@@ -44,6 +45,7 @@ const AdminPage = () => {
             <div className=' w-1/3 flex flex-col gap-4'>
 
                 <EventCalander />
+                <Announcement />
 
             </div>
         </div>
