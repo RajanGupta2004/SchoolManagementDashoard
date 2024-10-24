@@ -1,6 +1,6 @@
 // TEMPORARY DATA
 
-export let role = "admin";
+export let role = "student";
 
 export const teachersData = [
   {
@@ -769,14 +769,27 @@ export const resultsData = [
   },
 ];
 
+const dummyEvents = [
+  {
+    allDay: false,
+    end: new Date('December 09, 2025 20:00:00'),
+    start: new Date('December 09, 2017 06:00:00'),
+    title: 'hi',
+  }
+]
+
 export const eventsData = [
   {
     id: 1,
-    title: "Lake Trip",
-    class: "1A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
+    title: 'Long Event',
+    start: new Date(2024, 3, 7),
+    end: new Date(2025, 3, 10),
+  },
+  {
+    id: 1,
+    title: 'Long Event',
+    start: new Date(2015, 3, 7),
+    end: new Date(2015, 3, 10),
   },
   {
     id: 2,
@@ -1060,4 +1073,54 @@ export const calendarEvents = [
     start: new Date(2024, 7, 16, 14, 0),
     end: new Date(2024, 7, 16, 14, 45),
   },
+];
+
+
+
+
+
+
+const today = new Date(); // Get the current date
+const year = today.getFullYear();
+const month = today.getMonth(); // Month is zero-indexed, so no need to adjust
+const day = today.getDate();
+
+export const calendarEvents1 = [
+  {
+    title: "Math",
+    allDay: false,
+    start: new Date(year, month, day, 8, 0), // Today at 8:00 AM
+    end: new Date(year, month, day, 8, 45),
+  },
+  {
+    title: "English",
+    allDay: false,
+    start: new Date(year, month, day, 9, 0), // Today at 9:00 AM
+    end: new Date(year, month, day, 9, 45),
+  },
+  {
+    title: "Biology",
+    allDay: false,
+    start: new Date(year, month, day, 10, 0), // Today at 10:00 AM
+    end: new Date(year, month, day, 10, 45),
+  },
+  {
+    title: "Physics",
+    allDay: false,
+    start: new Date(year, month, day, 11, 0), // Today at 11:00 AM
+    end: new Date(year, month, day, 11, 45),
+  },
+  {
+    title: "Chemistry",
+    allDay: false,
+    start: new Date(year, month, day, 13, 0), // Today at 1:00 PM
+    end: new Date(year, month, day, 13, 45),
+  },
+  {
+    title: "History",
+    allDay: false,
+    start: new Date(year, month, day, 14, 0), // Today at 2:00 PM
+    end: new Date(year, month, day, 14, 45),
+  },
+  // Add more events and shift the day value to adjust for other days of the week
 ];

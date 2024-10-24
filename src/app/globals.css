@@ -8,3 +8,12 @@
     border: none !important;
 
 }
+
+.rbc-btn-group:first-child {
+    display: none !important;
+}
+
+/* 
+.rbc-calendar {
+    min-height: 500px !important;
+} */
