@@ -9,7 +9,7 @@ export default function DashBoardLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="h-screen flex">
+        <div className=" flex">
 
             {/* left */}
             <div className="w-[14%] md:w-[8%] lg:w-[14%] ">
@@ -24,9 +24,9 @@ export default function DashBoardLayout({
 
 
             {/* right */}
-            <div className="w-[86%] md:w-[92%] lg:w[86%] bg-slate-50 overflow-scroll">
+            <div className="w-[86%] md:w-[92%] lg:w[86%] bg-slate-50 overflow-scroll flex flex-col ">
                 <Navbar />
-                <div>
+                <div className="flex-1">
                     {children}
                 </div>
             </div>

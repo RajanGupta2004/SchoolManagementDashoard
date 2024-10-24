@@ -26,7 +26,8 @@ const Announcement = () => {
         <div className='flex flex-col gap-5 p-4 bg-white rounded-lg'>
             <div className='flex justify-between'>
                 <h1 className='font-semibold'>Announcement</h1>
-                <Image src="/moreDark.png" alt='img' width={20} height={20} />
+                <p className='text-[14px] font-semibold'>View All</p>
+                {/* <Image src="/moreDark.png" alt='img' width={20} height={20} /> */}
             </div>
 
             {
