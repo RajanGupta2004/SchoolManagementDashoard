@@ -779,18 +779,7 @@ const dummyEvents = [
 ]
 
 export const eventsData = [
-  {
-    id: 1,
-    title: 'Long Event',
-    start: new Date(2024, 3, 7),
-    end: new Date(2025, 3, 10),
-  },
-  {
-    id: 1,
-    title: 'Long Event',
-    start: new Date(2015, 3, 7),
-    end: new Date(2015, 3, 10),
-  },
+
   {
     id: 2,
     title: "Picnic",
