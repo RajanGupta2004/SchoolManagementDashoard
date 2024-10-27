@@ -1,7 +1,7 @@
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
-import { classesData, examsData, parentsData, role, studentsData, teachersData } from '@/lib/data'
+import { assignmentsData, classesData, examsData, parentsData, role, studentsData, teachersData } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -27,8 +27,8 @@ const colums = [
 
     },
     {
-        header: "Date",
-        accessor: "date",
+        header: "Due Date",
+        accessor: "due date",
         className: "hidden md:table-cell"
 
     },
@@ -41,19 +41,19 @@ const colums = [
 ]
 
 
-interface Exam {
+interface Assignment {
     id: number,
     subject: string,
     class: string
     teacher: string,
-    date: string,
+    dueDate: string,
 
 }
 
-const ExamListPage = () => {
+const AssignmentListPage = () => {
 
 
-    const renderRow = (item: Exam) => {
+    const renderRow = (item: Assignment) => {
         return (
             <tr key={item.id} className=' border-b-2 text-sm hover:bg-purple-100 odd:bg-slate-50'>
                 <td className='flex items-center gap-4 p-4'>
@@ -61,7 +61,7 @@ const ExamListPage = () => {
                 </td>
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.class}</td>
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.teacher}</td>
-                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.date}</td>
+                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.dueDate}</td>
                 <td className='  text-sm text-gray-700  flex items-center justify-center gap-4'>
                     <Link href="">
                         <button className='rounded-full w-[20px] h-[20px]'>
@@ -90,7 +90,7 @@ const ExamListPage = () => {
             </div>
             {/* table  */}
             <div className='w-full  '>
-                <Table colums={colums} renderRow={renderRow} data={examsData} />
+                <Table colums={colums} renderRow={renderRow} data={assignmentsData} />
 
             </div>
 
@@ -101,4 +101,4 @@ const ExamListPage = () => {
     )
 }
 
-export default ExamListPage
+export default AssignmentListPage

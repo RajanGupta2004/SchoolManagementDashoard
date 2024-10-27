@@ -50,7 +50,7 @@ interface Classes {
 
 }
 
-const ParentListPage = () => {
+const ClassListPage = () => {
 
 
     const renderRow = (item: Classes) => {
@@ -101,4 +101,4 @@ const ParentListPage = () => {
     )
 }
 
-export default ParentListPage
+export default ClassListPage
