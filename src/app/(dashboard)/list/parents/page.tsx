@@ -1,7 +1,7 @@
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
-import { role, teachersData } from '@/lib/data'
+import { parentsData, role, studentsData, teachersData } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -13,23 +13,13 @@ const colums = [
 
     },
     {
-        header: "Teacher ID",
-        accessor: "teacher id",
+        header: "Student Name",
+        accessor: "student name",
         className: "hidden md:table-cell"
 
     },
-    {
-        header: "Subjects",
-        accessor: "subjects",
-        className: "hidden md:table-cell"
 
-    },
-    {
-        header: "Classes",
-        accessor: "classes",
-        className: "hidden md:table-cell"
 
-    },
     {
         header: "Phone",
         accessor: "phone",
@@ -51,35 +41,30 @@ const colums = [
 ]
 
 
-interface Teacher {
+interface Parents {
     id: number,
-    photo: string,
     name: string,
     email: string,
-    teacherId: string,
-    subjects: [],
-    classes: [],
+    students: string[],
     phone: string,
     address: string
 
 }
 
-const TeacherListPage = () => {
+const ParentListPage = () => {
 
 
-    const renderRow = (item: Teacher) => {
+    const renderRow = (item: Parents) => {
         return (
             <tr key={item.id} className=' border-b-2 text-sm hover:bg-purple-100 odd:bg-slate-50'>
                 <td className='flex items-center gap-4 p-4'>
-                    <img src={item.photo} alt='img' className='w-[40px] h-[40px] rounded-full  ' />
+                    {/* <img src={item.photo} alt='img' className='w-[40px] h-[40px] rounded-full ' /> */}
                     <div>
                         <p className='text-sm text-gray-500'>{item.name}</p>
                         <p className='text-[14px] text-gray-500'>{item?.email}</p>
                     </div>
                 </td>
-                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.teacherId}</td>
-                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.subjects.join(" ,")}</td>
-                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.classes.join(",")}</td>
+                <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.students}</td>
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.phone}</td>
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.address}</td>
                 <td className='  text-sm text-gray-700  flex items-center justify-center gap-4'>
@@ -98,7 +83,7 @@ const TeacherListPage = () => {
     return (
         <div className='p-2 rounded-md bg-white  mx-2 mt-0 '>
             <div className='flex items-center justify-between'>
-                <h1 className=' hidden md:block text-lg font-semibold'>All Teacher</h1>
+                <h1 className=' hidden md:block text-lg font-semibold'>All Pareents </h1>
                 <div className='w-full md:w-auto md:flex md:items-center gap-3  '>
                     <TableSearch />
                     <div className='p-1 flex items-end justify-self-end  gap-3'>
@@ -110,7 +95,7 @@ const TeacherListPage = () => {
             </div>
             {/* table  */}
             <div className='w-full  '>
-                <Table colums={colums} renderRow={renderRow} data={teachersData} />
+                <Table colums={colums} renderRow={renderRow} data={parentsData} />
 
             </div>
 
@@ -121,4 +106,4 @@ const TeacherListPage = () => {
     )
 }
 
-export default TeacherListPage
+export default ParentListPage
