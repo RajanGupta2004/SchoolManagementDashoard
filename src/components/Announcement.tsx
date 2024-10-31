@@ -32,12 +32,12 @@ const Announcement = () => {
 
             {
                 announcement.map((announcement) => (
-                    <div className='border-y-2 gap-2 odd:bg-[#fef08a] even:bg-[#c084fc] p-2 rounded-xl'>
+                    <div className='border-y-2 gap-2 odd:bg-[#fef08a74] even:bg-[#c084fc] p-2 rounded-xl'>
                         <div className='flex justify-between my-3'>
                             <h1 className='font-semibold'>{announcement.title}</h1>
                             <h1>{announcement.date}</h1>
                         </div>
-                        <p>{announcement.description}</p>
+                        <p className='text-sm'>{announcement.description}</p>
                     </div>
                 ))
             }
