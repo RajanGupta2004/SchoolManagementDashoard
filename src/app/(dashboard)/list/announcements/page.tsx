@@ -73,7 +73,7 @@ const AnnouncementsListPage = () => {
     return (
         <div className='p-2 rounded-md bg-white  mx-2 mt-0 '>
             <div className='flex items-center justify-between'>
-                <h1 className=' hidden md:block text-lg font-semibold'>All Announcement  </h1>
+                <h1 className=' hidden md:block text-lg font-semibold'>All Announcement </h1>
                 <div className='w-full md:w-auto md:flex md:items-center gap-3  '>
                     <TableSearch />
                     <div className='p-1 flex items-end justify-self-end  gap-3'>
