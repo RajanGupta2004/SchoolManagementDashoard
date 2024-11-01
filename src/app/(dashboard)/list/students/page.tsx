@@ -1,3 +1,4 @@
+import FormModel from '@/components/FormModel'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
@@ -77,14 +78,12 @@ const StudentsListPage = () => {
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.phone}</td>
                 <td className='hidden md:table-cell text-sm text-gray-700 text-center'>{item.address}</td>
                 <td className='  text-sm text-gray-700  flex items-center justify-center gap-4'>
-                    <Link href="">
-                        <button className='rounded-full w-[20px] h-[20px]'>
-                            <Image src="/view.png" alt='img' width={20} height={20} />
-                        </button>
-                    </Link>
-                    {role === "admin" && <button>
-                        <Image src="/delete.png" alt='img' width={20} height={20} />
-                    </button>}
+                    {role === "admin" &&
+                        <>
+                            <FormModel table="student" type="update" />
+                            <FormModel table="student" type="delete" id={item.id} />
+                        </>
+                    }
                 </td>
             </tr>
         )
@@ -96,9 +95,19 @@ const StudentsListPage = () => {
                 <div className='w-full md:w-auto md:flex md:items-center gap-3  '>
                     <TableSearch />
                     <div className='p-1 flex items-end justify-self-end  gap-3'>
-                        <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'><Image src='/filter.png' alt="img" width={20} height={20} className='' /></button>
-                        <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'><Image src='/sort.png' alt="img" width={20} height={20} className='' /></button>
-                        <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'><Image src='/plus.png' alt="img" width={20} height={20} className='' /></button>
+                        <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'>
+                            <Image src='/filter.png' alt="img" width={20} height={20} className='' />
+                        </button>
+                        <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'>
+                            <Image src='/sort.png' alt="img" width={20} height={20} className='' />
+                        </button>
+                        {role === "admin" &&
+                            // <button className='bg-yellow-200 w-8 h-8 rounded-full p-2'>
+                            //     <Image src='/plus.png' alt="img" width={20} height={20} className='' />
+                            // </button>
+                            <FormModel table="student" type="create" />
+                        }
+
                     </div>
                 </div>
             </div>
